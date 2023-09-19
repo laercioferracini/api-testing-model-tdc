@@ -1,0 +1,4 @@
+scenario           ,method,path   ,param,statusCode,expectedMessage
+GET status code 200,GET   ,/status,200  ,200       ,""
+GET status code 201,GET   ,/status,201  ,201       ,""
+GET status code 200,GET   ,/status,202  ,202       ,""
