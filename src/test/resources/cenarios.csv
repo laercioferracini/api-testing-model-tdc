@@ -2,3 +2,6 @@ scenario           ,method,path   ,param,statusCode,expectedMessage
 GET status code 200,GET   ,/status,200  ,200       ,""
 GET status code 201,GET   ,/status,201  ,201       ,""
 GET status code 200,GET   ,/status,202  ,202       ,""
+GET status code 400,GET   ,/status,400  ,400       ,""
+GET status code 403,GET   ,/status,403  ,403       ,""
+GET status code 500,GET   ,/status,500  ,500       ,""
