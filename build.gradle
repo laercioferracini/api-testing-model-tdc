@@ -52,3 +52,12 @@ tasks.named('test') {
     // Use junit platform for unit tests.
     useJUnitPlatform()
 }
+
+tasks.withType(Test).configureEach {testTask ->
+    testLogging {
+
+        exceptionFormat "short"
+        events "skipped", "passed", "failed"
+        showStandardStreams true
+    }
+}

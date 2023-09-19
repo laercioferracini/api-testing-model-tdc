@@ -1,3 +1,3 @@
 scenario      ,method,path     ,payload                                         ,statusCode,jsonPath       ,expectedMessage
 POST body json,POST  ,/anything,"{""name"": ""Laercio"",""lastName"": ""Test""}",200       ,"json.name"    ,Laercio
-POST body json,POST  ,/anything,"{""name"": ""Johns"",""lastName"": ""Test""}"  ,200       ,"json.lastName",test
+POST body json,POST  ,/anything,"{""name"": ""Johns"",""lastName"": ""Test""}"  ,200       ,"json.lastName",Test

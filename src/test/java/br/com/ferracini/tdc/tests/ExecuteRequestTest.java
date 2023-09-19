@@ -15,6 +15,9 @@ import org.junit.jupiter.params.aggregator.ArgumentsAccessor;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -67,7 +70,8 @@ class ExecuteRequestTest {
         var responseMessage = response.jsonPath().get(dataTest.jsonPath());
 
         assertAll(dataTest.scenario(),
-                () -> assertEquals(dataTest.statusCode(), response.statusCode()),
-                () -> assertEquals(dataTest.expectedMessage(), responseMessage));
+                () -> assertThat(response.statusCode(), is(equalTo(dataTest.statusCode()))),
+                () -> assertThat(responseMessage, is(equalTo(dataTest.expectedMessage())))
+        );
     }
 }
